@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Pakeeza Abid</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -18,7 +17,6 @@ body.dark {
   background: #0f0f0f;
   color: #ffffff;
 }
-
 body.light {
   background: #ffffff;
   color: #111;
@@ -30,60 +28,52 @@ body.light {
   margin: 120px auto;
   padding: 0 20px;
 }
+
 /* TEXT */
 h1 {
   font-size: 42px;
   margin-bottom: 8px;
   font-weight: normal;
 }
-
 h2 {
   font-size: 18px;
   margin-top: 60px;
   margin-bottom: 10px;
   font-weight: bold;
 }
-
 p {
   line-height: 1.7;
   font-size: 16px;
 }
 
-  section {
+/* SECTIONS */
+section {
   margin-top: 120px;
   padding-top: 20px;
-}
-  section h2 {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
-}
-  section {
   scroll-margin-top: 100px;
-}
-  html {
-  scroll-behavior: smooth;
-}
-  section {
   opacity: 0.6;
   transition: 0.4s;
 }
-
 section.active {
   opacity: 1;
 }
-  .skills {
+section h2 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* SKILLS */
+.skills {
   display: flex;
   flex-direction: column;
   gap: 25px;
   margin-top: 20px;
 }
-
 .skill-group h3 {
   font-size: 15px;
   margin-bottom: 5px;
   font-weight: bold;
 }
-
 .skill-group p {
   font-size: 15px;
   line-height: 1.6;
@@ -94,172 +84,127 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
 a:hover {
   opacity: 0.7;
 }
 
-/* TOGGLE */
-.toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-}
+/* NAV */
 .top-bar {
   position: fixed;
   top: 20px;
   right: 20px;
   backdrop-filter: blur(6px);
 }
-
 .nav {
   display: flex;
   gap: 20px;
   align-items: center;
 }
-
 .nav a {
   text-decoration: none;
   color: inherit;
   font-size: 13px;
-  opacity: 0.8;
-}
-
-.nav a:hover {
-  opacity: 1;
-}
-
-.nav a:hover {
-  opacity: 0.6;
-}
-  .nav a {
   opacity: 0.5;
   transition: 0.3s;
 }
-
 .nav a:hover {
   opacity: 1;
 }
-  
 
+/* TOGGLE */
 .toggle {
   cursor: pointer;
-}</style>
+  font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+</style>
 </head>
 
 <body class="light">
 
 <div class="top-bar">
   <div class="nav">
-   <a href="#home">Home</a>
+    <a href="#home">Home</a>
     <a href="#work">Work Experience</a>
     <a href="#research">Research Projects</a>
     <a href="#stata">Stata Files</a>
     <a href="#contact">Contact</a>
-    <span class="toggle" onclick="toggleTheme()">☀️</span>
-{
-  color: inherit;
-  text-decoration: none;
-}</span>
+    <span class="toggle" onclick="toggleTheme()">🌙</span>
   </div>
 </div>
 
 <div class="container">
 
-<div id="home">
-  <h1>Pakeeza Abid</h1>
-  <p>Researcher, Development Economics</p>
-</div>
-
-<section id="about">
-  <h2>About</h2>
-  <p>
-    I am currently pursuing a Masters degree at KDI School of Public Policy and Management, South Korea, and I am working on my Research "Academic Stress and Suicide Risk Among South Korean Adolescents". I have also worked as a Writing Center Consultant at KDI School where I was instructor for Stata and Latex. Previously, I have worked as a Research Assistant, for a project at Incheon National University, South Korea.
-  </p>
-</section>
-
-<section id="work">
-  <section id="skills">
-  <h2>Skills</h2>
-
-  <div class="skills">
-
-    <div class="skill-group">
-      <h3>Statistical Tools</h3>
-      <p>STATA · Python · SPSS</p>
-    </div>
-
-    <div class="skill-group">
-      <h3>Econometrics & Analysis</h3>
-      <p>
-        Statistical Modeling & Regression Analysis · Difference-in-Differences · 
-        Econometric Modeling · Computational Data Analysis
-      </p>
-    </div>
-
-    <div class="skill-group">
-      <h3>Data Science</h3>
-      <p>
-        Machine Learning for Predictive Analysis · Data Cleaning · 
-        Large-Scale Data Analysis
-      </p>
-    </div>
-
-    <div class="skill-group">
-      <h3>Research</h3>
-      <p>Quantitative Research Design · LaTeX (Scientific Writing)</p>
-    </div>
-
+  <div id="home">
+    <h1>Pakeeza Abid</h1>
+    <p>Researcher, Development Economics</p>
   </div>
-</section>
-</section>
 
-<section id="research">
-  <h2>Research Projects</h2>
-  <p>
-    Academic Stress and Suicide Risk Among South Korean Adolescents (ongoing).
-  </p>
-</section>
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I am currently pursuing a Masters degree at KDI School of Public Policy and Management, South Korea, 
+      and I am working on my Research "Academic Stress and Suicide Risk Among South Korean Adolescents". 
+      I have also worked as a Writing Center Consultant at KDI School where I was instructor for Stata and LaTeX. 
+      Previously, I have worked as a Research Assistant for a project at Incheon National University, South Korea.
+    </p>
+  </section>
 
-<section id="stata">
-  <h2>Stata Files</h2>
-  <p>
-    Coming soon — Stata scripts, datasets, and tutorials.
-  </p>
-</section>
+  <section id="work">
+    <h2>Work Experience</h2>
+    <p>Coming soon.</p>
+  </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>
-    Email: your@email.com <br>
-    Instagram: @yourhandle
-  </p>
-</section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-group">
+        <h3>Statistical Tools</h3>
+        <p>STATA · Python · SPSS</p>
+      </div>
+      <div class="skill-group">
+        <h3>Econometrics & Analysis</h3>
+        <p>Statistical Modeling & Regression Analysis · Difference-in-Differences · Econometric Modeling · Computational Data Analysis</p>
+      </div>
+      <div class="skill-group">
+        <h3>Data Science</h3>
+        <p>Machine Learning for Predictive Analysis · Data Cleaning · Large-Scale Data Analysis</p>
+      </div>
+      <div class="skill-group">
+        <h3>Research</h3>
+        <p>Quantitative Research Design · LaTeX (Scientific Writing)</p>
+      </div>
+    </div>
+  </section>
 
-<h2>Links</h2>
-<p>
-<a href="#">GitHub</a><br>
-<a href="#">Instagram</a><br>
-<a href="#">Email</a>
-</p>
+  <section id="research">
+    <h2>Research Projects</h2>
+    <p>Academic Stress and Suicide Risk Among South Korean Adolescents (ongoing).</p>
+  </section>
+
+  <section id="stata">
+    <h2>Stata Files</h2>
+    <p>Coming soon — Stata scripts, datasets, and tutorials.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      Email: your@email.com <br>
+      Instagram: @yourhandle
+    </p>
+    <p>
+      <a href="#">GitHub</a> &nbsp;·&nbsp;
+      <a href="#">Instagram</a> &nbsp;·&nbsp;
+      <a href="#">Email</a>
+    </p>
+  </section>
 
 </div>
 
-<script>
-function toggleTheme() {
-  const body = document.body;
-  const toggle = document.querySelector(".toggle");
-
-  if (body.classList.contains("light")) {
-    body.classList.remove("light");
-    body.classList.add("dark");
-    toggle.textContent = "☀️";
-  } else {
-    body.classList.remove("dark");
-    body.classList.add("light");
-    toggle.textContent = "🌙";
-  }
 <script>
 function toggleTheme() {
   const body = document.body;
@@ -276,7 +221,7 @@ function toggleTheme() {
   }
 }
 
-// ACTIVE SECTION EFFECT
+// ACTIVE SECTION HIGHLIGHT
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav a");
 
@@ -292,16 +237,12 @@ window.addEventListener("scroll", () => {
 
   sections.forEach(section => {
     section.classList.remove("active");
-    if (section.id === current) {
-      section.classList.add("active");
-    }
+    if (section.id === current) section.classList.add("active");
   });
 
   navLinks.forEach(link => {
     link.style.opacity = "0.5";
-    if (link.getAttribute("href") === "#" + current) {
-      link.style.opacity = "1";
-    }
+    if (link.getAttribute("href") === "#" + current) link.style.opacity = "1";
   });
 });
 </script>
