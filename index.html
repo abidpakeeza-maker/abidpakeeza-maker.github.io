@@ -26,32 +26,33 @@ body.light {
 
 /* LAYOUT */
 .container {
-  max-width: 700px;
-  margin: 100px auto;
-  padding: 20px;
+  max-width: 680px;
+  margin: 120px auto;
+  padding: 0 20px;
 }
-
 /* TEXT */
 h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
+  font-size: 42px;
+  margin-bottom: 8px;
+  font-weight: normal;
 }
 
 h2 {
-  font-size: 20px;
-  margin-top: 50px;
+  font-size: 18px;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 p {
-  line-height: 1.6;
-  color: inherit;
+  line-height: 1.7;
+  font-size: 16px;
 }
 
 /* LINKS */
 a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid #888;
 }
 
 a:hover {
@@ -80,7 +81,12 @@ a:hover {
 .nav a {
   text-decoration: none;
   color: inherit;
-  font-size: 14px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.nav a:hover {
+  opacity: 1;
 }
 
 .nav a:hover {
@@ -96,7 +102,7 @@ a:hover {
 
 <div class="top-bar">
   <div class="nav">
-    <a href="#">Home</a>
+   <a href="#home">Home</a>
     <a href="#work">Work Experience</a>
     <a href="#research">Research Projects</a>
     <a href="#stata">Stata Files</a>
@@ -107,8 +113,10 @@ a:hover {
 
 <div class="container">
 
-<h1>Pakeeza Malik</h1>
-<p>Researcher, Development Economics</p>
+<div id="home">
+  <h1>Pakeeza Abid</h1>
+  <p>Researcher, Development Economics</p>
+</div>
 
 <h2>About</h2>
 <p>
