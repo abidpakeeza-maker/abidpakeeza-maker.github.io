@@ -9,7 +9,7 @@
 <style>
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Times New Roman", Times, serif;
   transition: 0.3s;
 }
 
@@ -65,12 +65,45 @@ a:hover {
   right: 20px;
   cursor: pointer;
 }
-</style>
+.top-bar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  opacity: 0.6;
+}
+
+.toggle {
+  cursor: pointer;
+}</style>
 </head>
 
 <body class="dark">
 
-<div class="toggle" onclick="toggleTheme()">☀️</div>
+<div class="top-bar">
+  <div class="nav">
+    <a href="#">Home</a>
+    <a href="#work">Work Experience</a>
+    <a href="#research">Research Projects</a>
+    <a href="#stata">Stata Files</a>
+    <a href="#contact">Contact</a>
+    <span class="toggle" onclick="toggleTheme()">☀️</span>
+  </div>
+</div>
 
 <div class="container">
 
