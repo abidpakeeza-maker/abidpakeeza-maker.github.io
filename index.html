@@ -1,97 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
-  <title>Pakeeza Malik</title>
+<meta charset="UTF-8">
+<title>Pakeeza Malik</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #0f0f0f;
-      color: #ffffff;
-      text-align: center;
-    }
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-    section {
-      padding: 100px 20px;
-    }
+<style>
+html {
+  scroll-behavior: smooth;
+}
 
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
 
-    h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
+/* DARK MODE */
+body.dark {
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
 
-    p {
-      font-size: 18px;
-      max-width: 600px;
-      margin: 0 auto;
-      color: #cccccc;
-    }
+/* LIGHT MODE */
+body.light {
+  background-color: #ffffff;
+  color: #111;
+}
 
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+/* TEXT */
+p {
+  line-height: 1.6;
+}
 
-    .btn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      border: 1px solid white;
-      color: white;
-      text-decoration: none;
-      display: inline-block;
-    }
+body.dark p {
+  color: #cccccc;
+}
 
-    .btn:hover {
-      background: white;
-      color: black;
-    }
-  </style>
+body.light p {
+  color: #444;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* SECTIONS */
+section {
+  padding: 120px 20px;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* HEADINGS */
+h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 25px;
+  padding: 10px 20px;
+  border: 1px solid currentColor;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: currentColor;
+  color: #0f0f0f;
+}
+
+/* TOGGLE BUTTON */
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px 14px;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+</style>
 </head>
 
-<body>
+<body class="dark">
 
-  <!-- HERO -->
-  <section class="hero">
+<!-- THEME BUTTON -->
+<button class="toggle-btn" onclick="toggleTheme()">☀️ / 🌙</button>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
     <h1>Pakeeza Malik</h1>
     <p>AI • Neuroscience • Public Policy</p>
-    <a href="#about" class="btn">About Me</a>
-  </section>
+    <a href="#about" class="btn">Explore ↓</a>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about">
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
     <h2>About</h2>
     <p>
-      I am a researcher working at the intersection of AI, neuroscience, and public policy.
-      Currently based in South Korea, exploring innovation, technology, and human-centered design.
+      I explore the intersection of artificial intelligence, neuroscience, and public policy.
+      Currently based in South Korea, working on research, innovation, and human-centered systems.
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- WORK -->
-  <section>
+<!-- WORK -->
+<section>
+  <div class="container">
     <h2>Work</h2>
     <p>
       Coming soon — research projects, publications, and collaborations.
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section>
+<!-- CONTACT -->
+<section>
+  <div class="container">
     <h2>Contact</h2>
     <p>
       Email: your@email.com <br>
       Instagram: @yourhandle
     </p>
-  </section>
+  </div>
+</section>
+
+<!-- SCRIPT -->
+<script>
+function toggleTheme() {
+  const body = document.body;
+  if (body.classList.contains("dark")) {
+    body.classList.remove("dark");
+    body.classList.add("light");
+  } else {
+    body.classList.remove("light");
+    body.classList.add("dark");
+  }
+}
+</script>
 
 </body>
 </html>
