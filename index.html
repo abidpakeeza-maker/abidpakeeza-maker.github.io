@@ -59,6 +59,23 @@ p {
   html {
   scroll-behavior: smooth;
 }
+  .skills {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.skill-group h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.skill-group p {
+  font-size: 15px;
+  line-height: 1.6;
+}
 
 /* LINKS */
 a {
@@ -151,12 +168,39 @@ a:hover {
 </section>
 
 <section id="work">
-  <h2>Work Experience</h2>
-  <p>
-    Research Assistant – Incheon National University<br>
-    Writing Center Consultant – KDI School<br>
-    Instructor for Stata & LaTeX
-  </p>
+  <section id="skills">
+  <h2>Skills</h2>
+
+  <div class="skills">
+
+    <div class="skill-group">
+      <h3>Statistical Tools</h3>
+      <p>STATA · Python · SPSS</p>
+    </div>
+
+    <div class="skill-group">
+      <h3>Econometrics & Analysis</h3>
+      <p>
+        Statistical Modeling & Regression Analysis · Difference-in-Differences · 
+        Econometric Modeling · Computational Data Analysis
+      </p>
+    </div>
+
+    <div class="skill-group">
+      <h3>Data Science</h3>
+      <p>
+        Machine Learning for Predictive Analysis · Data Cleaning · 
+        Large-Scale Data Analysis
+      </p>
+    </div>
+
+    <div class="skill-group">
+      <h3>Research</h3>
+      <p>Quantitative Research Design · LaTeX (Scientific Writing)</p>
+    </div>
+
+  </div>
+</section>
 </section>
 
 <section id="research">
