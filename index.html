@@ -50,14 +50,26 @@ p {
 }
 
   section {
-  margin-top: 80px;
+  margin-top: 120px;
+  padding-top: 20px;
 }
   section h2 {
   border-bottom: 1px solid #ddd;
   padding-bottom: 5px;
 }
+  section {
+  scroll-margin-top: 100px;
+}
   html {
   scroll-behavior: smooth;
+}
+  section {
+  opacity: 0.6;
+  transition: 0.4s;
+}
+
+section.active {
+  opacity: 1;
 }
   .skills {
   display: flex;
@@ -248,7 +260,6 @@ function toggleTheme() {
     body.classList.add("light");
     toggle.textContent = "🌙";
   }
-}
 <script>
 function toggleTheme() {
   const body = document.body;
@@ -265,7 +276,7 @@ function toggleTheme() {
   }
 }
 
-// ACTIVE NAV HIGHLIGHT
+// ACTIVE SECTION EFFECT
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav a");
 
@@ -273,16 +284,23 @@ window.addEventListener("scroll", () => {
   let current = "";
 
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
+    const sectionTop = section.offsetTop - 120;
     if (scrollY >= sectionTop) {
       current = section.getAttribute("id");
     }
   });
 
-  navLinks.forEach(a => {
-    a.style.opacity = "0.5";
-    if (a.getAttribute("href") === "#" + current) {
-      a.style.opacity = "1";
+  sections.forEach(section => {
+    section.classList.remove("active");
+    if (section.id === current) {
+      section.classList.add("active");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.style.opacity = "0.5";
+    if (link.getAttribute("href") === "#" + current) {
+      link.style.opacity = "1";
     }
   });
 });
