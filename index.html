@@ -49,6 +49,17 @@ p {
   font-size: 16px;
 }
 
+  section {
+  margin-top: 80px;
+}
+  section h2 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+  html {
+  scroll-behavior: smooth;
+}
+
 /* LINKS */
 a {
   color: inherit;
@@ -70,6 +81,7 @@ a:hover {
   position: fixed;
   top: 20px;
   right: 20px;
+  backdrop-filter: blur(6px);
 }
 
 .nav {
@@ -92,6 +104,15 @@ a:hover {
 .nav a:hover {
   opacity: 0.6;
 }
+  .nav a {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+  
 
 .toggle {
   cursor: pointer;
@@ -122,17 +143,43 @@ a:hover {
   <p>Researcher, Development Economics</p>
 </div>
 
-<h2>About</h2>
-<p>
-I am currently pursuing a Masters degree at KDI School of Public Policy and Management, South Korea, and I am working on my Research "Academic Stress and Suicide Risk Among South Korean Adolescents". I have also worked as a Writing Center Consultant at KDI School where I was instructor for Stata and Latex. Previously, I have worked as a Research Assistant, for a project at Incheon National University, South Korea. 
-</p>
+<section id="about">
+  <h2>About</h2>
+  <p>
+    I am currently pursuing a Masters degree at KDI School of Public Policy and Management, South Korea, and I am working on my Research "Academic Stress and Suicide Risk Among South Korean Adolescents". I have also worked as a Writing Center Consultant at KDI School where I was instructor for Stata and Latex. Previously, I have worked as a Research Assistant, for a project at Incheon National University, South Korea.
+  </p>
+</section>
 
-<h2>Work</h2>
-<p>
-– Research on AI & policy<br>
-– Neuroscience & human systems<br>
-– Technology and development
-</p>
+<section id="work">
+  <h2>Work Experience</h2>
+  <p>
+    Research Assistant – Incheon National University<br>
+    Writing Center Consultant – KDI School<br>
+    Instructor for Stata & LaTeX
+  </p>
+</section>
+
+<section id="research">
+  <h2>Research Projects</h2>
+  <p>
+    Academic Stress and Suicide Risk Among South Korean Adolescents (ongoing).
+  </p>
+</section>
+
+<section id="stata">
+  <h2>Stata Files</h2>
+  <p>
+    Coming soon — Stata scripts, datasets, and tutorials.
+  </p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>
+    Email: your@email.com <br>
+    Instagram: @yourhandle
+  </p>
+</section>
 
 <h2>Links</h2>
 <p>
@@ -158,6 +205,43 @@ function toggleTheme() {
     toggle.textContent = "🌙";
   }
 }
+<script>
+function toggleTheme() {
+  const body = document.body;
+  const toggle = document.querySelector(".toggle");
+
+  if (body.classList.contains("light")) {
+    body.classList.remove("light");
+    body.classList.add("dark");
+    toggle.textContent = "☀️";
+  } else {
+    body.classList.remove("dark");
+    body.classList.add("light");
+    toggle.textContent = "🌙";
+  }
+}
+
+// ACTIVE NAV HIGHLIGHT
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(a => {
+    a.style.opacity = "0.5";
+    if (a.getAttribute("href") === "#" + current) {
+      a.style.opacity = "1";
+    }
+  });
+});
 </script>
 
 </body>
