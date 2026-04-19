@@ -25,7 +25,10 @@ body.dark {
   background-size: 20px 20px;
   color: #ffffff;
 }
-
+body.dark button, body.dark label {
+  color: #fff !important;
+  border-color: #555 !important;
+}
 html { scroll-behavior: smooth; }
 
 /* NAV */
@@ -211,7 +214,71 @@ a:hover { opacity: 0.7; }
   <!-- RESEARCH PROJECTS PAGE -->
   <div class="page" id="page-research">
     <h2>Research Projects</h2>
-    <p>Academic Stress and Suicide Risk Among South Korean Adolescents (ongoing).</p>
+
+    <div style="margin-top: 20px;">
+
+      <!-- SECTION HEADING -->
+      <h3 style="font-size: 15px; font-weight: bold; opacity: 0.5; letter-spacing: 0.05em; margin-bottom: 20px; text-transform: uppercase;">Working Paper</h3>
+
+      <!-- PAPER 1 -->
+      <div style="margin-bottom: 32px;">
+        <p style="font-size: 16px; font-weight: bold; margin: 0 0 4px;">
+          Academic Stress and Suicide Risk Among South Korean Adolescents
+        </p>
+        <p style="margin: 0 0 12px; font-size: 15px; opacity: 0.7;">
+          (ongoing). 2024.
+        </p>
+
+        <!-- BUTTONS -->
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button onclick="toggleAbstract('abstract1')" style="
+            padding: 5px 14px;
+            border-radius: 20px;
+            border: 1px solid #aaa;
+            background: transparent;
+            font-size: 13px;
+            cursor: pointer;
+            font-family: inherit;
+            color: inherit;
+          ">ABSTRACT</button>
+
+          <label style="
+            padding: 5px 14px;
+            border-radius: 20px;
+            border: 1px solid #aaa;
+            background: transparent;
+            font-size: 13px;
+            cursor: pointer;
+            font-family: inherit;
+            color: inherit;
+          ">
+            PDF
+            <input type="file" accept="application/pdf" style="display:none;" onchange="handlePDF(event)">
+          </label>
+        </div>
+
+        <!-- ABSTRACT BLOCK -->
+        <div id="abstract1" style="
+          display: none;
+          margin-top: 16px;
+          padding: 20px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          font-size: 15px;
+          line-height: 1.8;
+        ">
+          This study examines the impact of the start of the academic year, March 2nd on suicide deaths
+          in Korean adolescents, aged 11 to 19. I exploit difference-in-difference method using data
+          from Korea Microdata Integrated Service (MDIS) and Korean Statistical Information System
+          (KOSIS). The treatment group consists of the individuals aged 11 to 19 "students", and the
+          control group includes all other individuals in the dataset. I find a significant increase in suicide
+          deaths among Korean students, aged 11 to 19 following March 2nd and the increase is not
+          significant in population other than students. The result suggests that the start of the academic
+          year in Korea on March 2nd every year triggers the increase in suicide rates among students.
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <!-- WORK EXPERIENCE PAGE -->
@@ -352,6 +419,18 @@ function toggleTheme() {
   } else {
     body.classList.replace("dark", "light");
     toggle.textContent = "🌙";
+  }
+}
+  function toggleAbstract(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+
+function handlePDF(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const url = URL.createObjectURL(file);
+    window.open(url, '_blank');
   }
 }
 </script>
