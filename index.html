@@ -12,108 +12,28 @@ body {
   transition: 0.3s;
 }
 
-/* THEMES */
-
 body.light {
   background-color: #ffffff;
   background-image: radial-gradient(#00000015 1px, transparent 1px);
   background-size: 20px 20px;
+  color: #111;
 }
 
 body.dark {
   background-color: #0f0f0f;
   background-image: radial-gradient(#ffffff15 1px, transparent 1px);
   background-size: 20px 20px;
+  color: #ffffff;
 }
 
-/* LAYOUT */
-.container {
-  max-width: 680px;
-  margin: 80px auto;   /* was 120px */
-  padding: 0 20px;
-}
-
-/* TEXT */
-h1 {
-  font-size: 42px;
-  margin-bottom: 8px;
-  font-weight: normal;
-}
-h2 {
-  font-size: 18px;
-  margin-top: 10px;    /* was 60px */
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-p {
-  line-height: 1.7;
-  font-size: 16px;
-}
-
-/* SECTIONS */
-section {
-  margin-top: 40px;
-  padding-top: 0px;    /* was 20px */
-  scroll-margin-top: 100px;
-  opacity: 1;
-  transition: 0.4s;
-}
-section.active {
-  opacity: 1;
-}
-section h2 {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
-}
-
-/* SKILLS */
-/* SKILLS */
-.skills {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 16px;
-}
-
-.skill-group h3 {
-  font-size: 14px;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skill-tag {
-  background: #f0f0f0;
-  color: #333;
-  padding: 8px 16px;
-  border-radius: 10px;
-  font-size: 14px;
-}
-
-body.dark .skill-tag {
-  background: #1e1e1e;
-  color: #ccc;
-}
-
-/* LINKS */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-a:hover {
-  opacity: 0.7;
-}
+html { scroll-behavior: smooth; }
 
 /* NAV */
 .top-bar {
   position: fixed;
   top: 20px;
   right: 20px;
+  z-index: 100;
   backdrop-filter: blur(6px);
 }
 .nav {
@@ -127,9 +47,12 @@ a:hover {
   font-size: 13px;
   opacity: 0.5;
   transition: 0.3s;
+  cursor: pointer;
 }
-.nav a:hover {
+.nav a:hover { opacity: 1; }
+.nav a.active-tab {
   opacity: 1;
+  font-weight: bold;
 }
 
 /* TOGGLE */
@@ -138,9 +61,85 @@ a:hover {
   font-size: 16px;
 }
 
-html {
-  scroll-behavior: smooth;
+/* LAYOUT */
+.container {
+  max-width: 680px;
+  margin: 100px auto 60px;
+  padding: 0 20px;
 }
+
+/* PAGES */
+.page {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+.page.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* TEXT */
+h1 {
+  font-size: 42px;
+  margin-bottom: 4px;
+  font-weight: normal;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+}
+p {
+  line-height: 1.7;
+  font-size: 16px;
+}
+.subtitle {
+  font-size: 16px;
+  opacity: 0.6;
+  margin-bottom: 24px;
+}
+
+/* SKILLS */
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+.skill-group h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.skill-tag {
+  background: #f0f0f0;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+body.dark .skill-tag {
+  background: #1e1e1e;
+  color: #ccc;
+}
+
+/* LINKS */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover { opacity: 0.7; }
 </style>
 </head>
 
@@ -148,146 +147,123 @@ html {
 
 <div class="top-bar">
   <div class="nav">
-    <a href="#home">Home</a>
-    <a href="#work">Work Experience</a>
-    <a href="#research">Research Projects</a>
-    <a href="#stata">Stata Files</a>
-    <a href="#contact">Contact</a>
+    <a onclick="showPage('home', this)" class="active-tab">Home</a>
+    <a onclick="showPage('work', this)">Work Experience</a>
+    <a onclick="showPage('research', this)">Research Projects</a>
+    <a onclick="showPage('stata', this)">Stata Files</a>
+    <a onclick="showPage('contact', this)">Contact</a>
     <span class="toggle" onclick="toggleTheme()">🌙</span>
   </div>
 </div>
 
 <div class="container">
 
-  <div id="home">
+  <!-- HOME PAGE -->
+  <div class="page active" id="page-home">
     <h1>Pakeeza Abid</h1>
-    <p>Researcher, Development Economics</p>
-  </div>
-
-  <section id="about">
-    <h2>About</h2>
+    <p class="subtitle">Researcher, Development Economics</p>
     <p>
-      I am currently pursuing a Masters degree at KDI School of Public Policy and Management, South Korea, 
-      and I am working on my Research "Academic Stress and Suicide Risk Among South Korean Adolescents". 
-      I have also worked as a Writing Center Consultant at KDI School where I was instructor for Stata and LaTeX. 
+      I am currently pursuing a Masters degree at KDI School of Public Policy and Management, South Korea,
+      and I am working on my Research "Academic Stress and Suicide Risk Among South Korean Adolescents".
+      I have also worked as a Writing Center Consultant at KDI School where I was instructor for Stata and LaTeX.
       Previously, I have worked as a Research Assistant for a project at Incheon National University, South Korea.
     </p>
-  </section>
+  </div>
 
-  <section id="work">
+  <!-- WORK EXPERIENCE PAGE -->
+  <div class="page" id="page-work">
     <h2>Work Experience</h2>
     <p>Coming soon.</p>
-  </section>
-
-  <section id="skills">
-  <h2>Skills</h2>
-  <div class="skills">
-
-    <div class="skill-group">
-      <h3>Statistical Tools</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">STATA</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">SPSS</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <h3>Econometrics & Analysis</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Statistical Modeling</span>
-        <span class="skill-tag">Regression Analysis</span>
-        <span class="skill-tag">Difference-in-Differences</span>
-        <span class="skill-tag">Econometric Modeling</span>
-        <span class="skill-tag">Computational Data Analysis</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <h3>Data Science</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Machine Learning</span>
-        <span class="skill-tag">Data Cleaning</span>
-        <span class="skill-tag">Large-Scale Data Analysis</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <h3>Research</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Quantitative Research Design</span>
-        <span class="skill-tag">LaTeX</span>
-      </div>
-    </div>
-
   </div>
-</section>
 
-  <section id="research">
+  <!-- RESEARCH PROJECTS PAGE -->
+  <div class="page" id="page-research">
     <h2>Research Projects</h2>
     <p>Academic Stress and Suicide Risk Among South Korean Adolescents (ongoing).</p>
-  </section>
+  </div>
 
-  <section id="stata">
+  <!-- STATA FILES PAGE -->
+  <div class="page" id="page-stata">
     <h2>Stata Files</h2>
     <p>Coming soon — Stata scripts, datasets, and tutorials.</p>
-  </section>
+  </div>
 
-  <section id="contact">
+  <!-- CONTACT PAGE -->
+  <div class="page" id="page-contact">
     <h2>Contact</h2>
     <p>
-      Email: your@email.com <br>
-      Instagram: @yourhandle
+      Email: abidpakeeza@kdis.ac.kr <br>
+      Contact No: +821029405581
     </p>
-    <p>
+    <p style="margin-top: 20px;">
       <a href="#">GitHub</a> &nbsp;·&nbsp;
       <a href="#">Instagram</a> &nbsp;·&nbsp;
       <a href="#">Email</a>
     </p>
-  </section>
+  </div>
+
+  <!-- SKILLS (shown on Home page) -->
+  <div class="page" id="page-skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-group">
+        <h3>Statistical Tools</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">STATA</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SPSS</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Econometrics & Analysis</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Statistical Modeling</span>
+          <span class="skill-tag">Regression Analysis</span>
+          <span class="skill-tag">Difference-in-Differences</span>
+          <span class="skill-tag">Econometric Modeling</span>
+          <span class="skill-tag">Computational Data Analysis</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Data Science</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">Data Cleaning</span>
+          <span class="skill-tag">Large-Scale Data Analysis</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Research</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Quantitative Research Design</span>
+          <span class="skill-tag">LaTeX</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
 
 <script>
+function showPage(id, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+
+  document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active-tab'));
+  el.classList.add('active-tab');
+}
+
 function toggleTheme() {
   const body = document.body;
   const toggle = document.querySelector(".toggle");
-
   if (body.classList.contains("light")) {
-    body.classList.remove("light");
-    body.classList.add("dark");
+    body.classList.replace("light", "dark");
     toggle.textContent = "☀️";
   } else {
-    body.classList.remove("dark");
-    body.classList.add("light");
+    body.classList.replace("dark", "light");
     toggle.textContent = "🌙";
   }
 }
-
-// ACTIVE SECTION HIGHLIGHT
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    if (scrollY >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  sections.forEach(section => {
-    section.classList.remove("active");
-    if (section.id === current) section.classList.add("active");
-  });
-
-  navLinks.forEach(link => {
-    link.style.opacity = "0.5";
-    if (link.getAttribute("href") === "#" + current) link.style.opacity = "1";
-  });
-});
 </script>
 
 </body>
