@@ -217,7 +217,112 @@ a:hover { opacity: 0.7; }
 
     <div style="margin-top: 20px;">
 
-      <!-- SECTION HEADING -->
+      <!-- WORKING PAPER HEADING -->
+      <h3 style="font-size: 15px; font-weight: bold; opacity: 0.5; letter-spacing: 0.05em; margin-bottom: 20px; text-transform: uppercase;">Working Paper</h3>
+
+      <!-- PAPER 1 -->
+      <div style="margin-bottom: 32px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <p style="font-size: 16px; font-weight: bold; margin: 0 0 4px;">
+            Academic Stress and Suicide Risk Among South Korean Adolescents
+          </p>
+        </div>
+        <p style="margin: 0 0 12px; font-size: 15px; opacity: 0.7;">(ongoing). 2024.</p>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button onclick="toggleAbstract('abstract1')" style="padding: 5px 14px; border-radius: 20px; border: 1px solid #aaa; background: transparent; font-size: 13px; cursor: pointer; font-family: inherit; color: inherit;">ABSTRACT</button>
+          <label style="padding: 5px 14px; border-radius: 20px; border: 1px solid #aaa; background: transparent; font-size: 13px; cursor: pointer; font-family: inherit; color: inherit;">
+            PDF
+            <input type="file" accept="application/pdf" style="display:none;" onchange="handlePDF(event)">
+          </label>
+        </div>
+        <div id="abstract1" style="display: none; margin-top: 16px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; line-height: 1.8;">
+          This study examines the impact of the start of the academic year, March 2nd on suicide deaths in Korean adolescents, aged 11 to 19. I exploit difference-in-difference method using data from Korea Microdata Integrated Service (MDIS) and Korean Statistical Information System (KOSIS). The treatment group consists of the individuals aged 11 to 19 "students", and the control group includes all other individuals in the dataset. I find a significant increase in suicide deaths among Korean students, aged 11 to 19 following March 2nd and the increase is not significant in population other than students. The result suggests that the start of the academic year in Korea on March 2nd every year triggers the increase in suicide rates among students.
+        </div>
+      </div>
+
+      <!-- PUBLICATIONS HEADING -->
+      <h3 style="font-size: 15px; font-weight: bold; opacity: 0.5; letter-spacing: 0.05em; margin-top: 40px; margin-bottom: 20px; text-transform: uppercase;">Publications</h3>
+
+      <!-- PUB 1 -->
+      <div style="margin-bottom: 32px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div style="flex: 1;">
+            <p style="font-size: 16px; font-weight: bold; margin: 0 0 4px;">
+              Exploring Usability and User Value of the Electric Powered Wheelchair for the Elderly and Physically Disabled
+            </p>
+            <p style="margin: 0 0 12px; font-size: 15px; opacity: 0.7;">
+              <em>Proceedings of the 22nd Congress of the International Ergonomics Association, Volume 4</em>
+            </p>
+          </div>
+          <div style="text-align: right; font-size: 14px; opacity: 0.6; white-space: nowrap; margin-left: 20px;">
+            10/2025
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button onclick="toggleAbstract('abstract2')" style="padding: 5px 14px; border-radius: 20px; border: 1px solid #aaa; background: transparent; font-size: 13px; cursor: pointer; font-family: inherit; color: inherit;">ABSTRACT</button>
+          <label style="padding: 5px 14px; border-radius: 20px; border: 1px solid #aaa; background: transparent; font-size: 13px; cursor: pointer; font-family: inherit; color: inherit;">
+            PDF
+            <input type="file" accept="application/pdf" style="display:none;" onchange="handlePDF(event)">
+          </label>
+        </div>
+        <div id="abstract2" style="display: none; margin-top: 16px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; line-height: 1.8;">
+          Individuals experiencing various disabilities and aging who rely on Electric Powered Wheelchairs (EPW) for mobility assistance highlight the necessity of User-Centered Design in developing EPWs due to their diverse characteristics. This study evaluated the usability of a developed EPW, considering factors such as aging, prior EPW experience, and usage duration. Usability evaluations were conducted, including the System Usability Scale (SUS) and semi-structured interviews. Results indicate that elderly users rated the EPW more favorably than disabled users, with prior experience and usage duration influencing evaluations, suggesting a critical evaluation based on familiarity and robustness. Disabled users emphasized operational issues, especially regarding footrest height adjustment for long-term severe disability users, while elderly users appreciated its ease of operation. Longer EPW usage enhances user understanding, with previous device experience potentially influencing evaluations. These findings underscore the significance of considering user experience factors in EPW design for diverse user groups.
+        </div>
+      </div>
+
+      <!-- PUB 2 -->
+      <div style="margin-bottom: 32px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div style="flex: 1;">
+            <p style="font-size: 16px; font-weight: bold; margin: 0 0 4px;">
+              Use of CRISPR/CAS9 System in Engineering Plant Resistant to Gemini Virus, an Emerging Threat
+            </p>
+            <p style="margin: 0 0 12px; font-size: 15px; opacity: 0.7;">
+              <em>International Journal of Pathogen Research</em>
+            </p>
+          </div>
+          <div style="text-align: right; font-size: 14px; opacity: 0.6; white-space: nowrap; margin-left: 20px;">
+            2023
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button onclick="toggleAbstract('abstract3')" style="padding: 5px 14px; border-radius: 20px; border: 1px solid #aaa; background: transparent; font-size: 13px; cursor: pointer; font-family: inherit; color: inherit;">ABSTRACT</button>
+          <label style="padding: 5px 14px; border-radius: 20px; border: 1px solid #aaa; background: transparent; font-size: 13px; cursor: pointer; font-family: inherit; color: inherit;">
+            PDF
+            <input type="file" accept="application/pdf" style="display:none;" onchange="handlePDF(event)">
+          </label>
+        </div>
+        <div id="abstract3" style="display: none; margin-top: 16px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; line-height: 1.8;">
+          Gemini viruses account for destructive scourge wastes that endanger nourishment safety. The genomic sequence of Gemini virus comprises of a round or disk shaped, unique or isolated stranded or grounded DNA crumb, which set off a duplex DNA replica center in the parenchyma cell core and translate almost seven to four universal polypeptide Weed attribute manipulate needs effectual pick out genetic editing machinery. Clustered regularly interspaced palindromic repeats accompanying (CAS) type II organization cast off select genomic changing implementation beyond the organisms that have nucleus in their cell containing plants that cause resistance of these devastating Gemi virus. We know the evolution (TRV) tobacco rattle virus, which is, mediated during the genomic changing or during editing in tobacco plant family not long ago. We know that tobacco rattle virus also affects the new and newly growing plantlets that have possess a very small size genomic size that help in multiplication and binary fusion and also in cloning and agricultural agro infections that cause the plants to diseases. Closer, constant action and distinctiveness of the tobacco rattle virus, which is mediated CRISPR Cas9 system for targeted modification of the tobacco rattle family plant Nicotiana benthamiana genome. Informational and experimental report perseverance TRV-moderate Cas-9 task for about 30 days agroinefection. In addition, our results show or demonstrate that TRV make up genomic sequence changing illustrated no in-exact work generable in exact arguing the exactness of the organization for vascular plantlets genomic sequencing scheme.
+        </div>
+      </div>
+
+      <!-- PUB 3 -->
+      <div style="margin-bottom: 32px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div style="flex: 1;">
+            <p style="font-size: 16px; font-weight: bold; margin: 0 0 4px;">
+              A Comprehensive Review Article on Severe Acute Respiratory Syndrome and Role of Antioxidants in its Prevention and Treatment
+            </p>
+            <p style="margin: 0 0 12px; font-size: 15px; opacity: 0.7;">
+              <em>Khalij-Libya Journal of Dental and Medical Research</em>
+            </p>
+          </div>
+          <div style="text-align: right; font-size: 14px; opacity: 0.6; white-space: nowrap; margin-left: 20px;">
+            2023
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button onclick="toggleAbstract('abstract4')" style="padding: 5px 14px; border-radius: 20px; border: 1px solid #aaa; background: transparent; font-size: 13px; cursor: pointer; font-family: inherit; color: inherit;">ABSTRACT</button>
+          <label style="padding: 5px 14px; border-radius: 20px; border: 1px solid #aaa; background: transparent; font-size: 13px; cursor: pointer; font-family: inherit; color: inherit;">
+            PDF
+            <input type="file" accept="application/pdf" style="display:none;" onchange="handlePDF(event)">
+          </label>
+        </div>
+        <div id="abstract4" style="display: none; margin-top: 16px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; line-height: 1.8;">
+          The emergence of novel coronaviruses, including the severe acute respiratory syndrome and the more recent COVID-19 pandemic caused by SARS-CoV-2, has captured global attention due to their dangerous nature and potential for international harm. This comprehensive review delves into the historical evolution, virology, and clinical intricacies of these viruses. Beginning with the origins of SARS and its subsequent transmission, the article navigates through the epidemiology, pathogenesis, and clinical features, unraveling the complex interplay between these factors. Pivotal role of antioxidants, including vitamins A, C, D, and pivotal minerals such as zinc, copper, selenium, and magnesium, is meticulously examined in relation to their potential to bolster immune responses and counteract oxidative stress. This review highlights the crucial significance of these antioxidants in both the prevention and treatment of viral infections. From the intricate virological structure to the transmission dynamics and the clinical manifestations that span from mild to severe, this paper meticulously unpacks the multifaceted nature of coronaviruses. Emphasizing the importance of swift intervention and preventive strategies, the article also explores antiviral therapies, convalescent plasma treatment, and vaccination efforts as essential tools in managing and preventing the spread of these viruses.
+        </div>
+      </div>!-- SECTION HEADING -->
       <h3 style="font-size: 15px; font-weight: bold; opacity: 0.5; letter-spacing: 0.05em; margin-bottom: 20px; text-transform: uppercase;">Working Paper</h3>
 
       <!-- PAPER 1 -->
