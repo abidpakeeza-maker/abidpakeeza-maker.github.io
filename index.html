@@ -456,8 +456,21 @@ function showPage(id, el) {
   document.getElementById('page-' + id).classList.add('active');
 
   document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active-tab'));
-  el.classList.add('active-tab');
+  if (el) el.classList.add('active-tab');
+
+  // Save page in URL so refresh works
+  window.location.hash = id;
 }
+
+// On load, check URL for saved page
+window.addEventListener('load', () => {
+  const hash = window.location.hash.replace('#', '');
+  const validPages = ['home', 'research', 'work', 'stata', 'contact'];
+  if (hash && validPages.includes(hash)) {
+    const navLink = document.querySelector(`.nav a[onclick="showPage('${hash}', this)"]`);
+    showPage(hash, navLink);
+  }
+});
 
 function toggleTheme() {
   const body = document.body;
