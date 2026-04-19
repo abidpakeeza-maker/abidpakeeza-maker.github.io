@@ -68,20 +68,37 @@ section h2 {
 }
 
 /* SKILLS */
+/* SKILLS */
 .skills {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 16px;
   margin-top: 20px;
 }
+
 .skill-group h3 {
-  font-size: 15px;
-  margin-bottom: 5px;
+  font-size: 14px;
+  margin-bottom: 8px;
   font-weight: bold;
 }
-.skill-group p {
-  font-size: 15px;
-  line-height: 1.6;
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background: #f0f0f0;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+body.dark .skill-tag {
+  background: #1e1e1e;
+  color: #ccc;
 }
 
 /* LINKS */
@@ -164,26 +181,48 @@ html {
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="skill-group">
-        <h3>Statistical Tools</h3>
-        <p>STATA · Python · SPSS</p>
-      </div>
-      <div class="skill-group">
-        <h3>Econometrics & Analysis</h3>
-        <p>Statistical Modeling & Regression Analysis · Difference-in-Differences · Econometric Modeling · Computational Data Analysis</p>
-      </div>
-      <div class="skill-group">
-        <h3>Data Science</h3>
-        <p>Machine Learning for Predictive Analysis · Data Cleaning · Large-Scale Data Analysis</p>
-      </div>
-      <div class="skill-group">
-        <h3>Research</h3>
-        <p>Quantitative Research Design · LaTeX (Scientific Writing)</p>
+  <h2>Skills</h2>
+  <div class="skills">
+
+    <div class="skill-group">
+      <h3>Statistical Tools</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">STATA</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SPSS</span>
       </div>
     </div>
-  </section>
+
+    <div class="skill-group">
+      <h3>Econometrics & Analysis</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Statistical Modeling</span>
+        <span class="skill-tag">Regression Analysis</span>
+        <span class="skill-tag">Difference-in-Differences</span>
+        <span class="skill-tag">Econometric Modeling</span>
+        <span class="skill-tag">Computational Data Analysis</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Data Science</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Machine Learning</span>
+        <span class="skill-tag">Data Cleaning</span>
+        <span class="skill-tag">Large-Scale Data Analysis</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Research</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Quantitative Research Design</span>
+        <span class="skill-tag">LaTeX</span>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <section id="research">
     <h2>Research Projects</h2>
