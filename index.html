@@ -3,21 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Pakeeza Abid</title>
-<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 body {
   margin: 0;
   font-family: "Times New Roman", Times, serif;
   transition: 0.3s;
 }
-
 body.light {
   background-color: #ffffff;
   background-image: radial-gradient(#00000015 1px, transparent 1px);
   background-size: 20px 20px;
   color: #111;
 }
-
 body.dark {
   background-color: #0f0f0f;
   background-image: radial-gradient(#ffffff15 1px, transparent 1px);
@@ -55,20 +53,17 @@ html { scroll-behavior: smooth; }
   opacity: 1;
   font-weight: bold;
 }
-
 /* TOGGLE */
 .toggle {
   cursor: pointer;
   font-size: 16px;
 }
-
 /* LAYOUT */
 .container {
   max-width: 680px;
   margin: 100px auto 60px;
   padding: 0 20px;
 }
-
 /* PAGES */
 .page {
   display: none;
@@ -81,7 +76,6 @@ html { scroll-behavior: smooth; }
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 /* TEXT */
 h1 {
   font-size: 42px;
@@ -105,7 +99,6 @@ p {
   opacity: 1;
   margin-bottom: 24px;
 }
-
 /* SKILLS */
 .skills {
   display: flex;
@@ -143,11 +136,21 @@ a {
 a:hover { opacity: 0.7; }
 </style>
 </head>
-
 <body class="light">
 
-<div style="position: fixed; top: 160px; left: 30px; z-index: 100;">
+<div style="position: fixed; top: 16px; left: 24px; z-index: 100;">
   <span onclick="showPage('home', null)" style="font-family: 'Satisfy', cursive; font-size: 36px; cursor: pointer; color: inherit; user-select: none;">pa</span>
+</div>
+
+<div style="position: fixed; top: 80px; left: 20px; z-index: 100;">
+  <img src="photo.jpg" alt="Pakeeza Abid" style="
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+    border: 2px solid #ddd;
+  ">
 </div>
 
 <div class="top-bar">
@@ -159,17 +162,6 @@ a:hover { opacity: 0.7; }
     <a onclick="showPage('contact', this)">Contact</a>
     <span class="toggle" onclick="toggleTheme()">🌙</span>
   </div>
-</div>
-
-<div style="position: fixed; top: 100px; left: 30px; z-index: 100;">
-  <img src="photo.jpg" alt="Pakeeza Abid" style="
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center 20%;
-    border: 2px solid #ddd;
-  ">
 </div>
 
 <div class="container">
