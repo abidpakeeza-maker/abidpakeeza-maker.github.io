@@ -148,7 +148,7 @@ a:hover { opacity: 0.7; }
     height: 160px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: 40% 30%;
+    object-position: 45% 15%;
     border: 2px solid #ddd;
   ">
 </div>
@@ -486,6 +486,12 @@ function showPage(id, el) {
   document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active-tab'));
   if (el) el.classList.add('active-tab');
   window.location.hash = id;
+
+  // Show photo only on home page
+  const photo = document.getElementById('profile-photo');
+  if (photo) {
+    photo.style.display = id === 'home' ? 'block' : 'none';
+  }
 }
 
 window.addEventListener('load', () => {
