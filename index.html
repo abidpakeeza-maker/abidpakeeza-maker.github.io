@@ -6,6 +6,9 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
+  <div style="position: fixed; bottom: 24px; right: 24px; z-index: 200;">
+  <span class="toggle" onclick="toggleTheme()">🌙</span>
+</div>
 
 body {
   font-family: "EB Garamond", Georgia, serif;
@@ -245,7 +248,6 @@ body.dark .abstract-box { border-color: #333; background: #111; }
     <a onclick="showPage('work', this)">Work Experience</a>
     <a onclick="showPage('stata', this)">Stata Files</a>
     <a onclick="showPage('contact', this)">Contact</a>
-    <span class="toggle" onclick="toggleTheme()">🌙</span>
   </div>
 </div>
 
@@ -486,20 +488,6 @@ body.dark .abstract-box { border-color: #333; background: #111; }
   <div class="page" id="page-stata">
     <div class="section-title" style="margin-top:0;">Stata Files</div>
     <p style="font-size:15px; line-height:1.8;">Coming soon — Stata scripts, datasets, and tutorials.</p>
-  </div>
-
-  <!-- CONTACT PAGE -->
-  <div class="page" id="page-contact">
-    <div class="section-title" style="margin-top:0;">Contact</div>
-    <div class="contact-block">
-      KDI School of Public Policy and Management<br>
-      Sejong-si, South Korea<br><br>
-      Email: <a href="mailto:abidpakeeza@kdis.ac.kr">abidpakeeza@kdis.ac.kr</a><br>
-      Phone: +82 10 2940 5581<br><br>
-      <a href="#">GitHub</a> &nbsp;·&nbsp;
-      <a href="#">LinkedIn</a> &nbsp;·&nbsp;
-      <a href="#">Email</a>
-    </div>
   </div>
 
 </div>
