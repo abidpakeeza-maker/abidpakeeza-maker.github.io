@@ -4,9 +4,28 @@
 <meta charset="UTF-8">
 <title>Pakeeza Abid</title>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-  .left-contact-bar {
+
+body {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 16px;
+  background: #fff;
+  color: #111;
+  transition: 0.3s;
+}
+
+body.dark {
+  background: #0f0f0f;
+  color: #eee;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* LEFT BAR */
+.left-contact-bar {
   position: fixed;
   left: 24px;
   top: 50%;
@@ -30,46 +49,9 @@
   transform: scale(1.1);
 }
 
-body.dark .left-contact-bar a {
-  color: #eee;
-}
+body.dark .left-contact-bar a { color: #eee; }
 
-/* LinkedIn boxed style */
-.left-contact-bar a:nth-child(4) {
-  font-weight: bold;
-  font-size: 14px;
-  border: 1px solid currentColor;
-  padding: 4px 6px;
-  border-radius: 4px;
-  text-align: center;
-}
-  .home-title strong {
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.contact-title {
-  font-weight: 700;
-  font-size: 16px;
-}
-
-body {
-  font-family: "EB Garamond", Georgia, serif;
-  font-size: 16px;
-  background: #fff;
-  color: #111;
-  transition: 0.3s;
-}
-
-body.dark {
-  background: #0f0f0f;
-  color: #eee;
-}
-
-a { color: inherit; text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* TOP NAV */
+/* NAV */
 .top-nav {
   position: fixed;
   top: 0;
@@ -91,499 +73,202 @@ body.dark .top-nav {
 
 .top-nav-name {
   font-size: 27px;
-  font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  cursor: pointer;
   margin-bottom: 16px;
+  cursor: pointer;
 }
 
 .top-nav-links {
   display: flex;
   gap: 32px;
-  align-items: center;
 }
 
 .top-nav-links a {
   font-size: 14px;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
   opacity: 0.5;
-  transition: 0.2s;
 }
 
-.top-nav-links a:hover { opacity: 1; text-decoration: none; }
 .top-nav-links a.active-tab { opacity: 1; }
 
-.toggle {
-  cursor: pointer;
-  font-size: 18px;
-}
-.toggle:hover { opacity: 0.7; }
-
+/* LAYOUT */
 .container {
   max-width: 950px;
   margin: 0 auto;
   padding: 180px 40px 80px;
 }
-  .home-contact a {
-  color: #b22222;
-  text-decoration: none;
-  border-bottom: 1px solid #d8a0a0;
-  padding-bottom: 2px;
-}
 
-.home-contact a:hover {
-  opacity: 0.8;
-}
-
-/* PAGES */
 .page { display: none; }
-.page.active { display: block; animation: fadeIn 0.25s ease; }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+.page.active { display: block; }
 
-/* HOME LAYOUT */
 .home-layout {
   display: flex;
   gap: 60px;
-  align-items: flex-start;
 }
 
 .home-left { flex: 1; }
-
-.home-photo {
-  flex-shrink: 0;
-  width: 200px;
-}
 
 .home-photo img {
   width: 200px;
   height: 240px;
   object-fit: cover;
-  object-position: 45% 15%;
   border-radius: 4px;
 }
 
-.home-name {
-  font-size: 28px;
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-
-.home-title {
-  font-size: 16px;
-  opacity: 0.65;
-  margin-bottom: 20px;
+/* TITLES */
+.home-title strong {
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .home-bio {
-  font-size: 15.5px;
+  margin-top: 15px;
   line-height: 1.75;
-  margin-bottom: 28px;
 }
 
 .home-contact {
-  font-size: 14.5px;
-  line-height: 1.9;
-  opacity: 0.75;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 .home-contact strong {
-  opacity: 1;
-  font-weight: 500;
   display: block;
-  margin-bottom: 2px;
-  color: #111;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
-
-body.dark .home-contact strong { color: #eee; }
 
 /* SECTIONS */
 .section-title {
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.5;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 6px;
-  margin-bottom: 20px;
   margin-top: 40px;
+  font-size: 13px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
 }
-
-body.dark .section-title { border-bottom-color: #333; }
 
 /* EDUCATION */
 .edu-item {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 20px;
+  margin-top: 15px;
 }
 
-.edu-left strong { font-size: 15px; display: block; margin-bottom: 2px; }
-.edu-left em { font-size: 14px; opacity: 0.7; }
-.edu-right { font-size: 14px; opacity: 0.6; text-align: right; white-space: nowrap; margin-left: 20px; }
-
-/* SKILLS */
-.skill-group { margin-bottom: 14px; }
-.skill-group h4 { font-size: 13px; font-weight: 500; margin-bottom: 6px; opacity: 0.7; }
-.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.skill-tag {
-  background: #f4f4f4;
-  color: #333;
-  padding: 4px 12px;
-  border-radius: 4px;
-  font-size: 13px;
-}
-body.dark .skill-tag { background: #1e1e1e; color: #ccc; }
-
-/* RESEARCH */
-.paper-item { margin-bottom: 28px; }
-.paper-header { display: flex; justify-content: space-between; align-items: flex-start; }
-.paper-title { font-size: 15.5px; font-weight: 500; margin-bottom: 3px; flex: 1; }
-.paper-year { font-size: 14px; opacity: 0.6; white-space: nowrap; margin-left: 20px; }
-.paper-meta { font-size: 14px; opacity: 0.65; margin-bottom: 10px; }
-.paper-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
-.paper-btn {
-  padding: 3px 12px;
-  border: 1px solid #bbb;
-  border-radius: 3px;
-  background: transparent;
-  font-size: 12px;
-  cursor: pointer;
-  font-family: inherit;
-  color: inherit;
-  letter-spacing: 0.05em;
-}
-.paper-btn:hover { background: #f4f4f4; }
-body.dark .paper-btn:hover { background: #1e1e1e; }
+/* ABSTRACT */
 .abstract-box {
   display: none;
-  margin-top: 14px;
-  padding: 16px 20px;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  font-size: 14.5px;
-  line-height: 1.8;
+  margin-top: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
   background: #fafafa;
 }
-body.dark .abstract-box { border-color: #333; background: #111; }
 
-/* WORK */
-.work-item { margin-bottom: 28px; }
-.work-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
-.work-left strong { font-size: 15px; display: block; }
-.work-left em { font-size: 14px; opacity: 0.7; }
-.work-right { font-size: 14px; opacity: 0.6; text-align: right; white-space: nowrap; margin-left: 20px; }
-.work-item ul { padding-left: 18px; font-size: 14.5px; line-height: 1.85; opacity: 0.85; margin-top: 8px; }
+/* BUTTON */
+.paper-btn {
+  padding: 4px 10px;
+  border: 1px solid #bbb;
+  font-size: 12px;
+  cursor: pointer;
+}
 </style>
 </head>
 
-<body class="light">
-  <!-- LEFT VERTICAL CONTACT BAR -->
+<body>
+
+<!-- LEFT BAR -->
 <div class="left-contact-bar">
   <a href="mailto:abidpakeeza@kdis.ac.kr">📧</a>
   <a href="tel:+821029405581">📞</a>
-  <a href="KDI School, South Korea">📍</a>
+  <a href="#">📍</a>
   <a href="https://www.linkedin.com/in/pakeeza-abid-4b719521b/" target="_blank">in</a>
 </div>
 
-<!-- TOP NAV -->
+<!-- NAV -->
 <div class="top-nav">
-  <div class="top-nav-name" onclick="showPage('home', null)">Pakeeza Abid</div>
+  <div class="top-nav-name" onclick="showPage('home')">Pakeeza Abid</div>
   <div class="top-nav-links">
     <a onclick="showPage('home', this)" class="active-tab">Home</a>
     <a onclick="showPage('research', this)">Research</a>
-    <a onclick="showPage('work', this)">Work Experience</a>
-    <a onclick="showPage('stata', this)">Stata Files</a>
+    <a onclick="showPage('work', this)">Work</a>
   </div>
 </div>
 
-<!-- DARK MODE TOGGLE -->
-<div style="position: fixed; bottom: 24px; right: 24px; z-index: 200;">
-  <span class="toggle" onclick="toggleTheme()">🌙</span>
-</div>
-
+<!-- MAIN -->
 <div class="container">
-  </div>
 
-  <!-- HOME PAGE -->
+<!-- HOME -->
+<div class="page active" id="page-home">
+
 <div class="home-layout">
 
   <div class="home-left">
 
-    <div class="home-title"><strong>Researcher, Development Economics</strong></div>
+    <div class="home-title">
+      <strong>Researcher, Development Economics</strong>
+    </div>
 
-    <p class="home-bio">
-      I am Pakeeza Abid, a Master’s Graduate and Researcher from the KDI School of Public Policy and Management, South Korea.<br><br>
-
-      My Research Interests lie in Development Economics and Development Policy, with a focus on Applied Quantitative Analysis.
-      I work with applied econometric methods, including causal inference approaches such as difference-in-differences, regression discontinuity designs, and randomized controlled trials.
-    </p>
+    <div class="home-bio">
+      I am a Master’s Graduate and Researcher from KDI School, South Korea.
+      My interests are Development Economics and Applied Econometrics.
+    </div>
 
     <div class="home-contact">
       <strong>Contact</strong>
-      <a href="mailto:abidpakeeza@kdis.ac.kr">abidpakeeza@kdis.ac.kr</a> |
-      <a href="mailto:pakeezamalik58@gmail.com">pakeezamalik58@gmail.com</a><br>
+      abidpakeeza@kdis.ac.kr <br>
       +82 10 2940 5581
     </div>
 
   </div>
 
   <div class="home-photo">
-    <img src="photo.jpg" alt="Pakeeza Abid">
+    <img src="photo.jpg">
   </div>
 
 </div>
 
-        <div class="section-title" style="margin-top: 36px;">Education</div>
-        <div class="edu-item">
-          <div class="edu-left">
-            <strong>Master of Public Policy (Development Economics)</strong>
-            <em>KDI School of Public Policy and Management, Korea</em>
-          </div>
-          <div class="edu-right">2026<br>South Korea</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-left">
-            <strong>Bachelor's: Medicine / Nutrition in Medicine</strong>
-            <em>Sargodha Medical College, University of Sargodha, Pakistan</em>
-          </div>
-          <div class="edu-right">2022<br> Pakistan</div>
-        </div>
+</div>
 
-        <div class="section-title">Skills</div>
-        <div class="skill-group">
-          <h4>Statistical Tools · Econometrics & Analysis</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">STATA</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">SPSS</span>
-            <span class="skill-tag">Statistical Modeling</span>
-            <span class="skill-tag">Regression Analysis</span>
-            <span class="skill-tag">Difference-in-Differences</span>
-            <span class="skill-tag">Econometric Modeling</span>
-            <span class="skill-tag">Computational Data Analysis</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h4>Data Science · Research</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">Machine Learning</span>
-            <span class="skill-tag">Data Cleaning</span>
-            <span class="skill-tag">Large-Scale Data Analysis</span>
-            <span class="skill-tag">Quantitative Research Design</span>
-            <span class="skill-tag">LaTeX</span>
-          </div>
-        </div>
+<!-- RESEARCH -->
+<div class="page" id="page-research">
 
-      </div>
+<div class="section-title">Working Paper</div>
 
-      <div class="home-photo">
-        <img src="photo.jpg" alt="Pakeeza Abid">
-      </div>
-
-    </div>
+<div>
+  <button class="paper-btn" onclick="toggleAbstract('a1')">Abstract</button>
+  <div class="abstract-box" id="a1">
+    This study examines academic stress and suicide risk...
   </div>
+</div>
 
-  <!-- RESEARCH PAGE -->
-  <div class="page" id="page-research">
-    <div class="section-title" style="margin-top:0;">Working Paper</div>
+</div>
 
-    <div class="paper-item">
-      <div class="paper-header">
-        <div class="paper-title">Academic Stress and Suicide Risk Among South Korean Adolescents (ongoing).</div>
-        <div class="paper-year">2026</div>
-      </div>
-      <div class="paper-meta">
-        Supervisor: <a href="https://www.kdischool.ac.kr/faculty/view.es?mid=a10401010000&type=1&page=3&emp_no=311000341" target="_blank" style="color:gray;">Professor David Sungho Park</a>
-      </div>
-      <div class="paper-btns">
-        <button class="paper-btn" onclick="toggleAbstract('abstract1')">ABSTRACT</button>
-        <label class="paper-btn">PDF <input type="file" accept="application/pdf" style="display:none;" onchange="handlePDF(event)"></label>
-      </div>
-      <div class="abstract-box" id="abstract1">
-        This study examines the impact of the start of the academic year, March 2nd on suicide deaths in Korean adolescents, aged 11 to 19. I exploit difference-in-difference method using data from Korea Microdata Integrated Service (MDIS) and Korean Statistical Information System (KOSIS). The treatment group consists of the individuals aged 11 to 19 "students", and the control group includes all other individuals in the dataset. I find a significant increase in suicide deaths among Korean students, aged 11 to 19 following March 2nd and the increase is not significant in population other than students. The result suggests that the start of the academic year in Korea on March 2nd every year triggers the increase in suicide rates among students.
-      </div>
-    </div>
+<!-- WORK -->
+<div class="page" id="page-work">
 
-    <div class="section-title">Publications</div>
+<div class="section-title">Work Experience</div>
 
-    <div class="paper-item">
-      <div class="paper-header">
-        <div class="paper-title">Exploring Usability and User Value of the Electric Powered Wheelchair for the Elderly and Physically Disabled</div>
-        <div class="paper-year">2025</div>
-      </div>
-      <div class="paper-meta">
-        with <a href="https://scholar.google.com/citations?user=ID83GhkAAAAJ&hl=ko" target="_blank" style="color:gray;">Professor Jaehyun Park</a><br>
-        <em>Proceedings of the 22nd Congress of the International Ergonomics Association, Volume 4</em>
-      </div>
-      <div class="paper-btns">
-        <button class="paper-btn" onclick="toggleAbstract('abstract2')">ABSTRACT</button>
-        <label class="paper-btn">PDF <input type="file" accept="application/pdf" style="display:none;" onchange="handlePDF(event)"></label>
-      </div>
-      <div class="abstract-box" id="abstract2">
-        Individuals experiencing various disabilities and aging who rely on Electric Powered Wheelchairs (EPW) for mobility assistance highlight the necessity of User-Centered Design in developing EPWs due to their diverse characteristics. This study evaluated the usability of a developed EPW, considering factors such as aging, prior EPW experience, and usage duration. Usability evaluations were conducted, including the System Usability Scale (SUS) and semi-structured interviews. Results indicate that elderly users rated the EPW more favorably than disabled users, with prior experience and usage duration influencing evaluations, suggesting a critical evaluation based on familiarity and robustness.
-      </div>
-    </div>
+<p>Writing Consultant – KDI School</p>
 
-    <div class="paper-item">
-      <div class="paper-header">
-        <div class="paper-title">Use of CRISPR/CAS9 System in Engineering Plant Resistant to Gemini Virus, an Emerging Threat</div>
-        <div class="paper-year">2023</div>
-      </div>
-      <div class="paper-meta"><em>International Journal of Pathogen Research</em></div>
-      <div class="paper-btns">
-        <button class="paper-btn" onclick="toggleAbstract('abstract3')">ABSTRACT</button>
-        <label class="paper-btn">PDF <input type="file" accept="application/pdf" style="display:none;" onchange="handlePDF(event)"></label>
-      </div>
-      <div class="abstract-box" id="abstract3">
-        Gemini viruses account for destructive scourge wastes that endanger nourishment safety. Clustered regularly interspaced palindromic repeats accompanying (CAS) type II organization cast off select genomic changing implementation beyond the organisms that have nucleus in their cell containing plants that cause resistance of these devastating Gemi virus. Closer, constant action and distinctiveness of the tobacco rattle virus, which is mediated CRISPR Cas9 system for targeted modification of the tobacco rattle family plant Nicotiana benthamiana genome.
-      </div>
-    </div>
-
-    <div class="paper-item">
-      <div class="paper-header">
-        <div class="paper-title">A Comprehensive Review Article on Severe Acute Respiratory Syndrome and Role of Antioxidants in its Prevention and Treatment</div>
-        <div class="paper-year">2023</div>
-      </div>
-      <div class="paper-meta"><em>Khalij-Libya Journal of Dental and Medical Research</em></div>
-      <div class="paper-btns">
-        <button class="paper-btn" onclick="toggleAbstract('abstract4')">ABSTRACT</button>
-        <label class="paper-btn">PDF <input type="file" accept="application/pdf" style="display:none;" onchange="handlePDF(event)"></label>
-      </div>
-      <div class="abstract-box" id="abstract4">
-        The emergence of novel coronaviruses, including the severe acute respiratory syndrome and the more recent COVID-19 pandemic caused by SARS-CoV-2, has captured global attention due to their dangerous nature and potential for international harm. Pivotal role of antioxidants, including vitamins A, C, D, and pivotal minerals such as zinc, copper, selenium, and magnesium, is meticulously examined in relation to their potential to bolster immune responses and counteract oxidative stress. Emphasizing the importance of swift intervention and preventive strategies, the article also explores antiviral therapies, convalescent plasma treatment, and vaccination efforts.
-      </div>
-    </div>
-
-  </div>
-
-  <!-- WORK EXPERIENCE PAGE -->
-  <div class="page" id="page-work">
-    <div class="section-title" style="margin-top:0;">Work Experience</div>
-
-    <div class="work-item">
-      <div class="work-header">
-        <div class="work-left">
-          <strong>Writing Consultant & Stata/LaTeX Instructor</strong>
-          <em>KDI School of Public Policy and Management, Korea</em>
-        </div>
-        <div class="work-right">08/2025 – 12/2025<br>Sejong, Korea</div>
-      </div>
-       As an instructor at Writing Center, KDI I reviewed graduate student's research papers, providing structured feedback on grammar, clarity, argumentation, and citation formatting. I delivered academic writing workshops and served as an instructor for Stata and LaTeX, supporting students in both research analysis and scientific writing.
-
-    
-    </div>
-
-    <div class="work-item">
-      <div class="work-header">
-        <div class="work-left">
-          <strong>Researcher (Engineering, AI and Human-computer Interaction)</strong>
-          <em>Incheon National University, South Korea</em>
-        </div>
-        <div class="work-right">07/2024 – 09/2024<br>Remote</div>
-      </div>
-        As an RA I collaborated with a multidisciplinary team to design user-centered prototypes for advanced HCI applications. I conducted research on AI-driven engineering solutions and contributed to the development of new methodologies. Analyzed user behavior data and conducted systematic research and benchmarking to support project development. I also prepared structured reports and research summaries for the team to facilitate decision-making and documentation.
-
-    
-    </div>
-
-    <div class="work-item">
-      <div class="work-header">
-        <div class="work-left">
-          <strong>Intern Researcher</strong>
-          <em>Microbiology Lab, Winlet Pharmaceuticals, Sargodha</em>
-        </div>
-        <div class="work-right">12/2021 – 12/2022<br>Sargodha, Pakistan</div>
-      </div>
-    </div>
-
-    <div class="work-item">
-      <div class="work-header">
-        <div class="work-left">
-          <strong>Clinical Nutritionist / Dietitian</strong>
-          <em>Sadiq Hospital, Sargodha</em>
-        </div>
-        <div class="work-right">08/2022 – 08/2024<br>Sargodha, Pakistan</div>
-      </div>
-    </div>
-
-    <div class="work-item">
-      <div class="work-header">
-        <div class="work-left">
-          <strong>Intern</strong>
-          <em>Mubarak Medical Complex, Sargodha</em>
-        </div>
-        <div class="work-right">10/2021 – 11/2021<br>Sargodha, Pakistan</div>
-      </div>
-    </div>
-
-    <div class="work-item">
-      <div class="work-header">
-        <div class="work-left">
-          <strong>Intern</strong>
-          <em>Shaikh Zayed Postgraduate Medical Institute, Lahore</em>
-        </div>
-        <div class="work-right">06/2019 – 07/2019<br>Lahore, Pakistan</div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- STATA FILES PAGE -->
-  <div class="page" id="page-stata">
-    <div class="section-title" style="margin-top:0;">Stata Files</div>
-    <p style="font-size:15px; line-height:1.8;">Coming soon — Stata scripts, datasets, and tutorials.</p>
-  </div>
+</div>
 
 </div>
 
 <script>
-function showPage(id, el) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + id).classList.add('active');
-  document.querySelectorAll('.top-nav-links a').forEach(a => a.classList.remove('active-tab'));
-  if (el) el.classList.add('active-tab');
-  window.location.hash = id;
+function showPage(id, el){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+
+  document.querySelectorAll('.top-nav-links a')
+    .forEach(a=>a.classList.remove('active-tab'));
+
+  if(el) el.classList.add('active-tab');
 }
 
-window.addEventListener('load', () => {
-  const hash = window.location.hash.replace('#', '');
-  const validPages = ['home', 'research', 'work', 'stata'];
-  if (hash && validPages.includes(hash)) {
-    const navLink = document.querySelector(`.top-nav-links a[onclick="showPage('${hash}', this)"]`);
-    showPage(hash, navLink);
-  }
-});
-
-function toggleTheme() {
-  const body = document.body;
-  const toggle = document.querySelector(".toggle");
-  if (body.classList.contains("light")) {
-    body.classList.replace("light", "dark");
-    toggle.textContent = "☀️";
-  } else {
-    body.classList.replace("dark", "light");
-    toggle.textContent = "🌙";
-  }
-}
-
-function toggleAbstract(id) {
+function toggleAbstract(id){
   const el = document.getElementById(id);
-  el.style.display = el.style.display === 'none' ? 'block' : 'none';
-}
-
-function handlePDF(event) {
-  const file = event.target.files[0];
-  if (file) {
-    const url = URL.createObjectURL(file);
-    window.open(url, '_blank');
-  }
+  el.style.display = el.style.display === "block" ? "none" : "block";
 }
 </script>
 
