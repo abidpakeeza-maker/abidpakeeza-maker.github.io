@@ -6,9 +6,6 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-  <div style="position: fixed; bottom: 24px; right: 24px; z-index: 200;">
-  <span class="toggle" onclick="toggleTheme()">🌙</span>
-</div>
 
 body {
   font-family: "EB Garamond", Georgia, serif;
@@ -57,12 +54,6 @@ body.dark .top-nav {
 
 .top-nav-links {
   display: flex;
-  gap: 28px;
-  align-items: center;
-}
-
-.top-nav-links {
-  display: flex;
   gap: 32px;
   align-items: center;
 }
@@ -75,12 +66,14 @@ body.dark .top-nav {
   transition: 0.2s;
 }
 
+.top-nav-links a:hover { opacity: 1; text-decoration: none; }
+.top-nav-links a.active-tab { opacity: 1; }
+
 .toggle {
   cursor: pointer;
-  font-size: 15px;
-  opacity: 0.6;
+  font-size: 18px;
 }
-.toggle:hover { opacity: 1; }
+.toggle:hover { opacity: 0.7; }
 
 .container {
   max-width: 860px;
@@ -231,6 +224,8 @@ body.dark .abstract-box { border-color: #333; background: #111; }
 .work-left em { font-size: 14px; opacity: 0.7; }
 .work-right { font-size: 14px; opacity: 0.6; text-align: right; white-space: nowrap; margin-left: 20px; }
 .work-item ul { padding-left: 18px; font-size: 14.5px; line-height: 1.85; opacity: 0.85; margin-top: 8px; }
+</style>
+</head>
 
 <body class="light">
 
@@ -242,8 +237,12 @@ body.dark .abstract-box { border-color: #333; background: #111; }
     <a onclick="showPage('research', this)">Research</a>
     <a onclick="showPage('work', this)">Work Experience</a>
     <a onclick="showPage('stata', this)">Stata Files</a>
-    <a onclick="showPage('contact', this)">Contact</a>
   </div>
+</div>
+
+<!-- DARK MODE TOGGLE -->
+<div style="position: fixed; bottom: 24px; right: 24px; z-index: 200;">
+  <span class="toggle" onclick="toggleTheme()">🌙</span>
 </div>
 
 <div class="container">
@@ -266,7 +265,7 @@ body.dark .abstract-box { border-color: #333; background: #111; }
           <strong>Contact</strong>
           KDI School of Public Policy and Management<br>
           Sejong-si, South Korea<br><br>
-          <a href="mailto:abidpakeeza@kdis.ac.kr">abidpakeeza@kdis.ac.kr</a><br> |
+          <a href="mailto:abidpakeeza@kdis.ac.kr">abidpakeeza@kdis.ac.kr</a><br>
           <a href="mailto:pakeezamalik58@gmail.com">pakeezamalik58@gmail.com</a><br>
           +82 10 2940 5581
         </div>
@@ -358,7 +357,7 @@ body.dark .abstract-box { border-color: #333; background: #111; }
         <label class="paper-btn">PDF <input type="file" accept="application/pdf" style="display:none;" onchange="handlePDF(event)"></label>
       </div>
       <div class="abstract-box" id="abstract2">
-        Individuals experiencing various disabilities and aging who rely on Electric Powered Wheelchairs (EPW) for mobility assistance highlight the necessity of User-Centered Design in developing EPWs due to their diverse characteristics. This study evaluated the usability of a developed EPW, considering factors such as aging, prior EPW experience, and usage duration. Usability evaluations were conducted, including the System Usability Scale (SUS) and semi-structured interviews. Results indicate that elderly users rated the EPW more favorably than disabled users, with prior experience and usage duration influencing evaluations, suggesting a critical evaluation based on familiarity and robustness. Disabled users emphasized operational issues, especially regarding footrest height adjustment for long-term severe disability users, while elderly users appreciated its ease of operation.
+        Individuals experiencing various disabilities and aging who rely on Electric Powered Wheelchairs (EPW) for mobility assistance highlight the necessity of User-Centered Design in developing EPWs due to their diverse characteristics. This study evaluated the usability of a developed EPW, considering factors such as aging, prior EPW experience, and usage duration. Usability evaluations were conducted, including the System Usability Scale (SUS) and semi-structured interviews. Results indicate that elderly users rated the EPW more favorably than disabled users, with prior experience and usage duration influencing evaluations, suggesting a critical evaluation based on familiarity and robustness.
       </div>
     </div>
 
@@ -499,7 +498,7 @@ function showPage(id, el) {
 
 window.addEventListener('load', () => {
   const hash = window.location.hash.replace('#', '');
-  const validPages = ['home', 'research', 'work', 'stata', 'contact'];
+  const validPages = ['home', 'research', 'work', 'stata'];
   if (hash && validPages.includes(hash)) {
     const navLink = document.querySelector(`.top-nav-links a[onclick="showPage('${hash}', this)"]`);
     showPage(hash, navLink);
